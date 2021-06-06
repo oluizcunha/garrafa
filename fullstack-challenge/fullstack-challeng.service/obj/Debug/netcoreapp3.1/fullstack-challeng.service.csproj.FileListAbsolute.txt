@@ -1,0 +1,8 @@
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\bin\Debug\netcoreapp3.1\fullstack-challeng.service.deps.json
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\bin\Debug\netcoreapp3.1\fullstack-challeng.service.dll
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\bin\Debug\netcoreapp3.1\fullstack-challeng.service.pdb
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.AssemblyInfoInputs.cache
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.AssemblyInfo.cs
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.csproj.CoreCompileInputs.cache
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.dll
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.pdb

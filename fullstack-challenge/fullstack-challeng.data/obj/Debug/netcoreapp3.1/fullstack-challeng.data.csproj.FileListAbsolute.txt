@@ -1,0 +1,15 @@
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\bin\Debug\netcoreapp3.1\fullstack-challeng.data.deps.json
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\bin\Debug\netcoreapp3.1\fullstack-challeng.data.dll
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\bin\Debug\netcoreapp3.1\fullstack-challeng.data.pdb
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\obj\Debug\netcoreapp3.1\fullstack-challeng.data.AssemblyInfoInputs.cache
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\obj\Debug\netcoreapp3.1\fullstack-challeng.data.AssemblyInfo.cs
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\obj\Debug\netcoreapp3.1\fullstack-challeng.data.csproj.CoreCompileInputs.cache
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\obj\Debug\netcoreapp3.1\fullstack-challeng.data.dll
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\obj\Debug\netcoreapp3.1\fullstack-challeng.data.pdb
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\bin\Debug\netcoreapp3.1\fullstack-challeng.data.runtimeconfig.json
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\bin\Debug\netcoreapp3.1\fullstack-challeng.data.runtimeconfig.dev.json
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\bin\Debug\netcoreapp3.1\fullstack-challenge.domain.dll
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\bin\Debug\netcoreapp3.1\fullstack-challenge.domain.pdb
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\obj\Debug\netcoreapp3.1\fullstack-challeng.data.csprojAssemblyReference.cache
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\obj\Debug\netcoreapp3.1\fullstack-challeng.data.csproj.CopyComplete
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.data\obj\Debug\netcoreapp3.1\fullstack-challeng.data.genruntimeconfig.cache
