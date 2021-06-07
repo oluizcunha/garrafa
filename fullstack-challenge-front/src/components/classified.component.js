@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateClassified, deleteClassified } from '../actions/classifieds';
+import { updateClassified } from '../actions/classifieds';
 import ClassifiedDataService from '../services/classified.service';
 
 class Classified extends Component {
@@ -108,17 +108,6 @@ class Classified extends Component {
       });
   }
 
-  removeClassified() {
-    this.props
-      .deleteClassified(this.state.currentClassified.id)
-      .then(() => {
-        this.props.history.push('/classifieds');
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }
-
   render() {
     const { currentClassified } = this.state;
 
@@ -170,6 +159,4 @@ class Classified extends Component {
   }
 }
 
-export default connect(null, { updateClassified, deleteClassified })(
-  Classified,
-);
+export default connect(null, { updateClassified })(Classified);

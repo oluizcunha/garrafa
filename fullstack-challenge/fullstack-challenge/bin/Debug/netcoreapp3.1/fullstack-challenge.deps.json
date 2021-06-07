@@ -1406,6 +1406,10 @@
         }
       },
       "fullstack-challeng.service/1.0.0": {
+        "dependencies": {
+          "fullstack-challeng.data": "1.0.0",
+          "fullstack-challenge.domain": "1.0.0"
+        },
         "runtime": {
           "fullstack-challeng.service.dll": {}
         },

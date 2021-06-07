@@ -1,5 +1,8 @@
 ﻿using fullstack_challeng.data.Repository;
+using fullstack_challeng.service.Service;
 using fullstack_challenge.domain.Entities;
+using fullstack_challenge.domain.Interface.Service;
+using fullstack_challenge.domain.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,32 +14,18 @@ namespace fullstack_challenge.Controllers
 {
     public class ClassifiedController : Controller
     {
-        private readonly ClassifiedRepository repository;
-        public ClassifiedController()
+        private readonly IClassifiedService _service;
+        public ClassifiedController(IClassifiedService service)
         {
-            repository = new ClassifiedRepository();
+            _service = service;
         }
 
         // GET: ClassifiedsController
         [HttpGet]
         [Route("Classifieds")]
-        public ActionResult<List<Classified>> Index()
+        public ActionResult<List<ClassifedViewModel>> Index()
         {
-            var classificado = repository.Get().ToList();
-
-            return classificado;
-        }
-
-        // GET: ClassifiedsController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: ClassifiedsController/Create
-        public ActionResult Create()
-        {
-            return View();
+            return _service.GetClassifieds();
         }
 
         // POST: ClassifiedsController/Create
@@ -46,25 +35,14 @@ namespace fullstack_challenge.Controllers
         {
             try
             {
-                var classificado = new Classified();
-                classificado.Title = classified.Title;
-                classificado.Description = classified.Description;
-                classificado.Date = DateTime.Now;
-
-
-                repository.Insert(classificado);
+                _service.AddClassified(classified);
                 return Ok();
             }
             catch
             {
-                return View();
+                return BadRequest();
             }
         }
 
-        // GET: ClassifiedsController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
     }
 }

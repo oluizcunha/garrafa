@@ -115,7 +115,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\luiz\\source\\repos\\fullstack-challenge\\fullstack-challeng.data\\fullstack-challeng.data.csproj": {
+                "projectPath": "C:\\Users\\luiz\\source\\repos\\fullstack-challenge\\fullstack-challeng.data\\fullstack-challeng.data.csproj"
+              },
+              "C:\\Users\\luiz\\source\\repos\\fullstack-challenge\\fullstack-challenge.domain\\fullstack-challenge.domain.csproj": {
+                "projectPath": "C:\\Users\\luiz\\source\\repos\\fullstack-challenge\\fullstack-challenge.domain\\fullstack-challenge.domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

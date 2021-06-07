@@ -5,9 +5,4 @@
     <RootNamespace>fullstack_challenge.domain</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Interface\Service\" />
-    <Folder Include="Interface\Repository\" />
-  </ItemGroup>
-
 </Project>

@@ -1527,6 +1527,10 @@
       "fullstack-challeng.service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "fullstack-challeng.data": "1.0.0",
+          "fullstack-challenge.domain": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/fullstack-challeng.service.dll": {}
         },

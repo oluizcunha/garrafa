@@ -6,3 +6,9 @@ C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\De
 C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.csproj.CoreCompileInputs.cache
 C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.dll
 C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.pdb
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.csprojAssemblyReference.cache
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\bin\Debug\netcoreapp3.1\fullstack-challeng.data.dll
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\bin\Debug\netcoreapp3.1\fullstack-challenge.domain.dll
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\bin\Debug\netcoreapp3.1\fullstack-challeng.data.pdb
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\bin\Debug\netcoreapp3.1\fullstack-challenge.domain.pdb
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challeng.service\obj\Debug\netcoreapp3.1\fullstack-challeng.service.csproj.CopyComplete

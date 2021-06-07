@@ -5,4 +5,9 @@
     <RootNamespace>fullstack_challeng.service</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\fullstack-challeng.data\fullstack-challeng.data.csproj" />
+    <ProjectReference Include="..\fullstack-challenge.domain\fullstack-challenge.domain.csproj" />
+  </ItemGroup>
+
 </Project>

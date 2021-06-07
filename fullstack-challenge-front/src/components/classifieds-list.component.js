@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import {
   retrieveClassifieds,
   findClassifiedsByTitle,
-  deleteAllClassifieds,
 } from '../actions/classifieds';
 import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
@@ -18,7 +17,6 @@ class ClassifiedsList extends Component {
     this.refreshData = this.refreshData.bind(this);
     this.setActiveClassified = this.setActiveClassified.bind(this);
     this.findByTitle = this.findByTitle.bind(this);
-    this.removeAllClassifieds = this.removeAllClassifieds.bind(this);
 
     this.state = {
       currentClassified: null,
@@ -53,18 +51,6 @@ class ClassifiedsList extends Component {
     });
   }
 
-  removeAllClassifieds() {
-    this.props
-      .deleteAllClassifieds()
-      .then((response) => {
-        console.log(response);
-        this.refreshData();
-      })
-      .catch((e) => {
-        console.log(e);
-      });
-  }
-
   findByTitle() {
     this.refreshData();
 
@@ -76,21 +62,36 @@ class ClassifiedsList extends Component {
     const { classifieds } = this.props;
 
     return (
-      <div className="cards">
-        {classifieds &&
-          classifieds.map((classified, index) => (
-            <Card className="card">
-              <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  {classified.title}
-                </Typography>
-                <Typography color="textSecondary">{classified.date}</Typography>
-                <Typography variant="body2" component="p">
-                  {classified.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          ))}
+      <div>
+        <h1>Classificados</h1>
+        <div>
+          {' '}
+          <button className="button">
+            {' '}
+            <Link to={'/add'} className="navbar-brand">
+              Adicionar Classificado
+            </Link>
+          </button>
+        </div>
+
+        <div className="cards">
+          {classifieds &&
+            classifieds.map((classified, index) => (
+              <Card className="card">
+                <CardContent>
+                  <Typography color="textSecondary" gutterBottom>
+                    {classified.title}
+                  </Typography>
+                  <Typography color="textSecondary">
+                    {classified.date}
+                  </Typography>
+                  <Typography variant="body2" component="p">
+                    {classified.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            ))}
+        </div>
       </div>
     );
   }
@@ -105,5 +106,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   retrieveClassifieds,
   findClassifiedsByTitle,
-  deleteAllClassifieds,
 })(ClassifiedsList);

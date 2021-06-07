@@ -11,3 +11,9 @@
 .card {
   padding: 0.5rem;
 }
+
+.button {
+  display: flex;
+  justify-content: between;
+  flex-direction: row;
+}

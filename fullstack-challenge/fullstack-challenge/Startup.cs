@@ -1,3 +1,6 @@
+using fullstack_challeng.data.Repository;
+using fullstack_challeng.service.Service;
+using fullstack_challenge.domain.Interface.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +35,9 @@ namespace fullstack_challenge
                        .AllowAnyHeader();
             }));
             services.AddControllers();
+
+            services.AddTransient<IClassifiedService, ClassifiedService>();
+            services.AddTransient<IClassifiedRepository, ClassifiedRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -21,11 +21,7 @@ class App extends Component {
                 Classificados
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to={'/add'} className="nav-link">
-                Novo Classificado
-              </Link>
-            </li>
+            <li className="nav-item"></li>
           </div>
         </nav>
 
