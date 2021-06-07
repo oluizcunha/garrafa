@@ -18,3 +18,10 @@
   justify-content: flex-end;
   padding: 0.5rem;
 }
+
+.title {
+  direction: rtl;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem;
+}
