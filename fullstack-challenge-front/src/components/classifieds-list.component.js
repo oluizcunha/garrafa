@@ -63,26 +63,16 @@ class ClassifiedsList extends Component {
 
     return (
       <div>
-        <div className="title">
+        <div className="main">
           <h1>Classificados</h1>
+          <Link to={'/add'}>
+            <button className="btn btn-primary">+ Novo classificado</button>
+          </Link>
         </div>
-        <div className="button">
-          {' '}
-          <button>
-            <Link
-              to={'/add'}
-              className="navbar-brand"
-              style={{ color: 'inherit' }}
-            >
-              Adicionar Classificado
-            </Link>
-          </button>
-        </div>
-
         <div className="cards">
           {classifieds &&
             classifieds.map((classified, index) => (
-              <Card className="card" style={{ backgroundColor: 'gainsboro' }}>
+              <Card className="card">
                 <CardContent>
                   <Typography color="textSecondary" gutterBottom>
                     {classified.title}
@@ -97,7 +87,6 @@ class ClassifiedsList extends Component {
               </Card>
             ))}
         </div>
-        <div>Desenvolvido por Luiz</div>
       </div>
     );
   }
