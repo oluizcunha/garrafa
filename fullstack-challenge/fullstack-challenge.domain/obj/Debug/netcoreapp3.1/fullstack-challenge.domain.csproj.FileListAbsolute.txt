@@ -6,3 +6,4 @@ C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challenge.domain\obj\De
 C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challenge.domain\obj\Debug\netcoreapp3.1\fullstack-challenge.domain.csproj.CoreCompileInputs.cache
 C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challenge.domain\obj\Debug\netcoreapp3.1\fullstack-challenge.domain.dll
 C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challenge.domain\obj\Debug\netcoreapp3.1\fullstack-challenge.domain.pdb
+C:\Users\luiz\source\repos\fullstack-challenge\fullstack-challenge.domain\obj\Debug\netcoreapp3.1\fullstack-challenge.domain.csprojAssemblyReference.cache
