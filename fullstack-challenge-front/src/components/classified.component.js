@@ -157,36 +157,6 @@ class Classified extends Component {
               </div>
             </form>
 
-            {currentClassified.published ? (
-              <button
-                className="badge badge-primary mr-2"
-                onClick={() => this.updateStatus(false)}
-              >
-                UnPublish
-              </button>
-            ) : (
-              <button
-                className="badge badge-primary mr-2"
-                onClick={() => this.updateStatus(true)}
-              >
-                Publish
-              </button>
-            )}
-
-            <button
-              className="badge badge-danger mr-2"
-              onClick={this.removeClassified}
-            >
-              Delete
-            </button>
-
-            <button
-              type="submit"
-              className="badge badge-success"
-              onClick={this.updateContent}
-            >
-              Update
-            </button>
             <p>{this.state.message}</p>
           </div>
         ) : (

@@ -6,6 +6,10 @@ import {
   deleteAllClassifieds,
 } from '../actions/classifieds';
 import { Link } from 'react-router-dom';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import './classifieds-list.component.css';
 
 class ClassifiedsList extends Component {
   constructor(props) {
@@ -72,76 +76,21 @@ class ClassifiedsList extends Component {
     const { classifieds } = this.props;
 
     return (
-      <div className="list row">
-        <div className="col-md-8">
-          <div className="input-group mb-3">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Search by title"
-              value={searchTitle}
-              onChange={this.onChangeSearchTitle}
-            />
-            <div className="input-group-append">
-              <button
-                className="btn btn-outline-secondary"
-                type="button"
-                onClick={this.findByTitle}
-              >
-                Search
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-6">
-          <h4>Classifieds List</h4>
-
-          <ul className="list-group">
-            {classifieds &&
-              classifieds.map((classified, index) => (
-                <li
-                  className={
-                    'list-group-item ' +
-                    (index === currentIndex ? 'active' : '')
-                  }
-                  onClick={() => this.setActiveClassified(classified, index)}
-                  key={index}
-                >
+      <div className="cards">
+        {classifieds &&
+          classifieds.map((classified, index) => (
+            <Card className="card">
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom>
                   {classified.title}
-                </li>
-              ))}
-          </ul>
-        </div>
-        <div className="col-md-6">
-          {currentClassified ? (
-            <div>
-              <h4>Classified</h4>
-              <div>
-                <label>
-                  <strong>Title:</strong>
-                </label>{' '}
-                {currentClassified.title}
-              </div>
-              <div>
-                <label>
-                  <strong>Description:</strong>
-                </label>{' '}
-                {currentClassified.description}
-              </div>
-              <div>
-                <label>
-                  <strong>Data:</strong>
-                </label>{' '}
-                {currentClassified.date}
-              </div>
-            </div>
-          ) : (
-            <div>
-              <br />
-              <p>Please click on a Classified...</p>
-            </div>
-          )}
-        </div>
+                </Typography>
+                <Typography color="textSecondary">{classified.date}</Typography>
+                <Typography variant="body2" component="p">
+                  {classified.description}
+                </Typography>
+              </CardContent>
+            </Card>
+          ))}
       </div>
     );
   }
