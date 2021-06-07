@@ -92,6 +92,7 @@ class ClassifiedsList extends Component {
               </Card>
             ))}
         </div>
+        <div>Desenvolvido por Luiz</div>
       </div>
     );
   }

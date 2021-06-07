@@ -15,14 +15,6 @@ class App extends Component {
           <Link to={'/classifieds'} className="navbar-brand">
             fullstack-challenge
           </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={'/classifieds'} className="nav-link">
-                Classificados
-              </Link>
-            </li>
-            <li className="nav-item"></li>
-          </div>
         </nav>
 
         <div className="container mt-3">

@@ -13,7 +13,8 @@
 }
 
 .button {
+  direction: ltr;
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0.5rem;
 }
