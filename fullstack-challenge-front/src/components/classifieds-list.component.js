@@ -1,30 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-  retrieveTutorials,
-  findTutorialsByTitle,
-  deleteAllTutorials,
-} from '../actions/tutorials';
+  retrieveClassifieds,
+  findClassifiedsByTitle,
+  deleteAllClassifieds,
+} from '../actions/classifieds';
 import { Link } from 'react-router-dom';
 
-class TutorialsList extends Component {
+class ClassifiedsList extends Component {
   constructor(props) {
     super(props);
     this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
     this.refreshData = this.refreshData.bind(this);
-    this.setActiveTutorial = this.setActiveTutorial.bind(this);
+    this.setActiveClassified = this.setActiveClassified.bind(this);
     this.findByTitle = this.findByTitle.bind(this);
-    this.removeAllTutorials = this.removeAllTutorials.bind(this);
+    this.removeAllClassifieds = this.removeAllClassifieds.bind(this);
 
     this.state = {
-      currentTutorial: null,
+      currentClassified: null,
       currentIndex: -1,
       searchTitle: '',
     };
   }
 
   componentDidMount() {
-    this.props.retrieveTutorials();
+    this.props.retrieveClassifieds();
   }
 
   onChangeSearchTitle(e) {
@@ -37,21 +37,21 @@ class TutorialsList extends Component {
 
   refreshData() {
     this.setState({
-      currentTutorial: null,
+      currentClassified: null,
       currentIndex: -1,
     });
   }
 
-  setActiveTutorial(tutorial, index) {
+  setActiveClassified(classified, index) {
     this.setState({
-      currentTutorial: tutorial,
+      currentClassified: classified,
       currentIndex: index,
     });
   }
 
-  removeAllTutorials() {
+  removeAllClassifieds() {
     this.props
-      .deleteAllTutorials()
+      .deleteAllClassifieds()
       .then((response) => {
         console.log(response);
         this.refreshData();
@@ -64,12 +64,12 @@ class TutorialsList extends Component {
   findByTitle() {
     this.refreshData();
 
-    this.props.findTutorialsByTitle(this.state.searchTitle);
+    this.props.findClassifiedsByTitle(this.state.searchTitle);
   }
 
   render() {
-    const { searchTitle, currentTutorial, currentIndex } = this.state;
-    const { tutorials } = this.props;
+    const { searchTitle, currentClassified, currentIndex } = this.state;
+    const { classifieds } = this.props;
 
     return (
       <div className="list row">
@@ -94,49 +94,49 @@ class TutorialsList extends Component {
           </div>
         </div>
         <div className="col-md-6">
-          <h4>Tutorials List</h4>
+          <h4>Classifieds List</h4>
 
           <ul className="list-group">
-            {tutorials &&
-              tutorials.map((tutorial, index) => (
+            {classifieds &&
+              classifieds.map((classified, index) => (
                 <li
                   className={
                     'list-group-item ' +
                     (index === currentIndex ? 'active' : '')
                   }
-                  onClick={() => this.setActiveTutorial(tutorial, index)}
+                  onClick={() => this.setActiveClassified(classified, index)}
                   key={index}
                 >
-                  {tutorial.title}
+                  {classified.title}
                 </li>
               ))}
           </ul>
         </div>
         <div className="col-md-6">
-          {currentTutorial ? (
+          {currentClassified ? (
             <div>
-              <h4>Tutorial</h4>
+              <h4>Classified</h4>
               <div>
                 <label>
                   <strong>Title:</strong>
                 </label>{' '}
-                {currentTutorial.title}
+                {currentClassified.title}
               </div>
               <div>
                 <label>
                   <strong>Description:</strong>
                 </label>{' '}
-                {currentTutorial.description}
+                {currentClassified.description}
               </div>
               <div>
                 <label>
                   <strong>Status:</strong>
                 </label>{' '}
-                {currentTutorial.published ? 'Published' : 'Pending'}
+                {currentClassified.published ? 'Published' : 'Pending'}
               </div>
 
               <Link
-                to={'/tutorials/' + currentTutorial.id}
+                to={'/classifieds/' + currentClassified.id}
                 className="badge badge-warning"
               >
                 Edit
@@ -145,7 +145,7 @@ class TutorialsList extends Component {
           ) : (
             <div>
               <br />
-              <p>Please click on a Tutorial...</p>
+              <p>Please click on a Classified...</p>
             </div>
           )}
         </div>
@@ -156,12 +156,12 @@ class TutorialsList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    tutorials: state.tutorials,
+    classifieds: state.classifieds,
   };
 };
 
 export default connect(mapStateToProps, {
-  retrieveTutorials,
-  findTutorialsByTitle,
-  deleteAllTutorials,
-})(TutorialsList);
+  retrieveClassifieds,
+  findClassifiedsByTitle,
+  deleteAllClassifieds,
+})(ClassifiedsList);

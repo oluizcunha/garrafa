@@ -1,31 +1,31 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { updateTutorial, deleteTutorial } from "../actions/tutorials";
-import TutorialDataService from "../services/tutorial.service";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateClassified, deleteClassified } from '../actions/classifieds';
+import ClassifiedDataService from '../services/classified.service';
 
-class Tutorial extends Component {
+class Classified extends Component {
   constructor(props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.getTutorial = this.getTutorial.bind(this);
+    this.getClassified = this.getClassified.bind(this);
     this.updateStatus = this.updateStatus.bind(this);
     this.updateContent = this.updateContent.bind(this);
-    this.removeTutorial = this.removeTutorial.bind(this);
+    this.removeClassified = this.removeClassified.bind(this);
 
     this.state = {
-      currentTutorial: {
+      currentClassified: {
         id: null,
-        title: "",
-        description: "",
+        title: '',
+        description: '',
         published: false,
       },
-      message: "",
+      message: '',
     };
   }
 
   componentDidMount() {
-    this.getTutorial(this.props.match.params.id);
+    this.getClassified(this.props.match.params.id);
   }
 
   onChangeTitle(e) {
@@ -33,8 +33,8 @@ class Tutorial extends Component {
 
     this.setState(function (prevState) {
       return {
-        currentTutorial: {
-          ...prevState.currentTutorial,
+        currentClassified: {
+          ...prevState.currentClassified,
           title: title,
         },
       };
@@ -45,18 +45,18 @@ class Tutorial extends Component {
     const description = e.target.value;
 
     this.setState((prevState) => ({
-      currentTutorial: {
-        ...prevState.currentTutorial,
+      currentClassified: {
+        ...prevState.currentClassified,
         description: description,
       },
     }));
   }
 
-  getTutorial(id) {
-    TutorialDataService.get(id)
+  getClassified(id) {
+    ClassifiedDataService.get(id)
       .then((response) => {
         this.setState({
-          currentTutorial: response.data,
+          currentClassified: response.data,
         });
         console.log(response.data);
       })
@@ -67,25 +67,25 @@ class Tutorial extends Component {
 
   updateStatus(status) {
     var data = {
-      id: this.state.currentTutorial.id,
-      title: this.state.currentTutorial.title,
-      description: this.state.currentTutorial.description,
+      id: this.state.currentClassified.id,
+      title: this.state.currentClassified.title,
+      description: this.state.currentClassified.description,
       published: status,
     };
 
     this.props
-      .updateTutorial(this.state.currentTutorial.id, data)
+      .updateClassified(this.state.currentClassified.id, data)
       .then((reponse) => {
         console.log(reponse);
 
         this.setState((prevState) => ({
-          currentTutorial: {
-            ...prevState.currentTutorial,
+          currentClassified: {
+            ...prevState.currentClassified,
             published: status,
           },
         }));
 
-        this.setState({ message: "The status was updated successfully!" });
+        this.setState({ message: 'The status was updated successfully!' });
       })
       .catch((e) => {
         console.log(e);
@@ -94,22 +94,25 @@ class Tutorial extends Component {
 
   updateContent() {
     this.props
-      .updateTutorial(this.state.currentTutorial.id, this.state.currentTutorial)
+      .updateClassified(
+        this.state.currentClassified.id,
+        this.state.currentClassified,
+      )
       .then((reponse) => {
         console.log(reponse);
-        
-        this.setState({ message: "The tutorial was updated successfully!" });
+
+        this.setState({ message: 'The classified was updated successfully!' });
       })
       .catch((e) => {
         console.log(e);
       });
   }
 
-  removeTutorial() {
+  removeClassified() {
     this.props
-      .deleteTutorial(this.state.currentTutorial.id)
+      .deleteClassified(this.state.currentClassified.id)
       .then(() => {
-        this.props.history.push("/tutorials");
+        this.props.history.push('/classifieds');
       })
       .catch((e) => {
         console.log(e);
@@ -117,13 +120,13 @@ class Tutorial extends Component {
   }
 
   render() {
-    const { currentTutorial } = this.state;
+    const { currentClassified } = this.state;
 
     return (
       <div>
-        {currentTutorial ? (
+        {currentClassified ? (
           <div className="edit-form">
-            <h4>Tutorial</h4>
+            <h4>Classified</h4>
             <form>
               <div className="form-group">
                 <label htmlFor="title">Title</label>
@@ -131,7 +134,7 @@ class Tutorial extends Component {
                   type="text"
                   className="form-control"
                   id="title"
-                  value={currentTutorial.title}
+                  value={currentClassified.title}
                   onChange={this.onChangeTitle}
                 />
               </div>
@@ -141,7 +144,7 @@ class Tutorial extends Component {
                   type="text"
                   className="form-control"
                   id="description"
-                  value={currentTutorial.description}
+                  value={currentClassified.description}
                   onChange={this.onChangeDescription}
                 />
               </div>
@@ -150,11 +153,11 @@ class Tutorial extends Component {
                 <label>
                   <strong>Status:</strong>
                 </label>
-                {currentTutorial.published ? "Published" : "Pending"}
+                {currentClassified.published ? 'Published' : 'Pending'}
               </div>
             </form>
 
-            {currentTutorial.published ? (
+            {currentClassified.published ? (
               <button
                 className="badge badge-primary mr-2"
                 onClick={() => this.updateStatus(false)}
@@ -172,7 +175,7 @@ class Tutorial extends Component {
 
             <button
               className="badge badge-danger mr-2"
-              onClick={this.removeTutorial}
+              onClick={this.removeClassified}
             >
               Delete
             </button>
@@ -189,7 +192,7 @@ class Tutorial extends Component {
         ) : (
           <div>
             <br />
-            <p>Please click on a Tutorial...</p>
+            <p>Please click on a Classified...</p>
           </div>
         )}
       </div>
@@ -197,4 +200,6 @@ class Tutorial extends Component {
   }
 }
 
-export default connect(null, { updateTutorial, deleteTutorial })(Tutorial);
+export default connect(null, { updateClassified, deleteClassified })(
+  Classified,
+);

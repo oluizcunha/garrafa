@@ -1,6 +1,6 @@
-import { combineReducers } from "redux";
-import tutorials from "./tutorials";
+import { combineReducers } from 'redux';
+import classifieds from './classified';
 
 export default combineReducers({
-  tutorials,
+  classifieds,
 });

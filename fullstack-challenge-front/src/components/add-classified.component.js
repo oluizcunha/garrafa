@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { createTutorial } from "../actions/tutorials";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { createClassified } from '../actions/classifieds';
 
-class AddTutorial extends Component {
+class AddClassified extends Component {
   constructor(props) {
     super(props);
     this.onChangeTitle = this.onChangeTitle.bind(this);
     this.onChangeDescription = this.onChangeDescription.bind(this);
-    this.saveTutorial = this.saveTutorial.bind(this);
-    this.newTutorial = this.newTutorial.bind(this);
+    this.saveClassified = this.saveClassified.bind(this);
+    this.newClassified = this.newClassified.bind(this);
 
     this.state = {
       id: null,
-      title: "",
-      description: "",
+      title: '',
+      description: '',
       published: false,
 
       submitted: false,
@@ -32,11 +32,11 @@ class AddTutorial extends Component {
     });
   }
 
-  saveTutorial() {
+  saveClassified() {
     const { title, description } = this.state;
 
     this.props
-      .createTutorial(title, description)
+      .createClassified(title, description)
       .then((data) => {
         this.setState({
           id: data.id,
@@ -53,11 +53,11 @@ class AddTutorial extends Component {
       });
   }
 
-  newTutorial() {
+  newClassified() {
     this.setState({
       id: null,
-      title: "",
-      description: "",
+      title: '',
+      description: '',
       published: false,
 
       submitted: false,
@@ -70,7 +70,7 @@ class AddTutorial extends Component {
         {this.state.submitted ? (
           <div>
             <h4>You submitted successfully!</h4>
-            <button className="btn btn-success" onClick={this.newTutorial}>
+            <button className="btn btn-success" onClick={this.newClassified}>
               Add
             </button>
           </div>
@@ -102,7 +102,7 @@ class AddTutorial extends Component {
               />
             </div>
 
-            <button onClick={this.saveTutorial} className="btn btn-success">
+            <button onClick={this.saveClassified} className="btn btn-success">
               Submit
             </button>
           </div>
@@ -112,4 +112,4 @@ class AddTutorial extends Component {
   }
 }
 
-export default connect(null, { createTutorial })(AddTutorial);
+export default connect(null, { createClassified })(AddClassified);
