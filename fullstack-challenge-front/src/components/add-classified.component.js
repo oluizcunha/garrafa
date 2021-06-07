@@ -77,7 +77,7 @@ class AddClassified extends Component {
         ) : (
           <div>
             <div className="form-group">
-              <label htmlFor="title">Title</label>
+              <label htmlFor="title">Título*</label>
               <input
                 type="text"
                 className="form-control"
@@ -90,7 +90,7 @@ class AddClassified extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">Descrição</label>
               <input
                 type="text"
                 className="form-control"
@@ -102,7 +102,11 @@ class AddClassified extends Component {
               />
             </div>
 
-            <button onClick={this.saveClassified} className="btn btn-success">
+            <button
+              onClick={this.saveClassified}
+              disabled={!this.state.description || !this.state.title}
+              className="btn btn-success"
+            >
               Submit
             </button>
           </div>

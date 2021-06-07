@@ -130,17 +130,10 @@ class ClassifiedsList extends Component {
               </div>
               <div>
                 <label>
-                  <strong>Status:</strong>
+                  <strong>Data:</strong>
                 </label>{' '}
-                {currentClassified.published ? 'Published' : 'Pending'}
+                {currentClassified.date}
               </div>
-
-              <Link
-                to={'/classifieds/' + currentClassified.id}
-                className="badge badge-warning"
-              >
-                Edit
-              </Link>
             </div>
           ) : (
             <div>
