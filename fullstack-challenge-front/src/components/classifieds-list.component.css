@@ -14,6 +14,6 @@
 
 .button {
   display: flex;
-  justify-content: between;
+  justify-content: space-between;
   flex-direction: row;
 }

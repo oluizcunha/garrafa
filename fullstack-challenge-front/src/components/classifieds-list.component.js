@@ -64,9 +64,9 @@ class ClassifiedsList extends Component {
     return (
       <div>
         <h1>Classificados</h1>
-        <div>
+        <div className="button">
           {' '}
-          <button className="button">
+          <button>
             {' '}
             <Link to={'/add'} className="navbar-brand">
               Adicionar Classificado
