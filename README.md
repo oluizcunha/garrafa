@@ -17,7 +17,7 @@ O projeto foi desenvolvido com tecnologias de ponta, sendo elas:
 ## Execução
 
 ### Backend
-Requerido [Node.js](https://nodejs.org/) v14 to run.
+Requerido [Node.js](https://nodejs.org/) v14 para rodar.
 1) Entre na pasta do front-end dentro do repositorio
 ```sh
 cd fullstack-challenge-front
@@ -39,7 +39,7 @@ localhost:8001
 
 
 ### Backend
-Requerido [DotNetCore](https://dotnet.microsoft.com/download/dotnet/5.0) v5 to run.
+Requerido [DotNetCore](https://dotnet.microsoft.com/download/dotnet/5.0) v5 para rodar.
 Backend foi desenvolvido no Visual Studio 2019 Community Edition.
 
 1) Altere a string de conexão com o banco de dados.
