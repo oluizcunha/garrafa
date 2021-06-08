@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createClassified } from '../actions/classifieds';
+import { createClassified } from '../../actions/classifieds';
+import './styles.css';
 
 class AddClassified extends Component {
   constructor(props) {
@@ -21,6 +23,7 @@ class AddClassified extends Component {
   }
 
   onChangeTitle(e) {
+    e.preventDefault();
     this.setState({
       title: e.target.value,
     });
@@ -32,7 +35,9 @@ class AddClassified extends Component {
     });
   }
 
-  saveClassified() {
+  saveClassified(e) {
+    e.preventDefault();
+
     const { title, description } = this.state;
 
     this.props
@@ -68,16 +73,20 @@ class AddClassified extends Component {
     return (
       <div className="submit-form">
         {this.state.submitted ? (
-          <div>
+          <div className="sucess-text">
             <h4>O classificado foi salvo com sucesso!</h4>
+            <Link to={'/'}>
+              <button className="btn btn-success">Voltar Para Home</button>
+            </Link>
             <button className="btn btn-success" onClick={this.newClassified}>
               Adicionar outro
             </button>
           </div>
         ) : (
-          <div>
+          <form onSubmit={this.saveClassified}>
             <div className="form-group">
-              <label htmlFor="title">Título*</label>
+              <label htmlFor="title">Título:</label>
+              <br />
               <input
                 type="text"
                 className="form-control"
@@ -90,9 +99,9 @@ class AddClassified extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="description">Descrição*</label>
-              <input
-                type="text"
+              <label htmlFor="description">Descrição:</label>
+              <br />
+              <textarea
                 className="form-control"
                 id="description"
                 required
@@ -102,14 +111,16 @@ class AddClassified extends Component {
               />
             </div>
 
+            <Link to={'/'}>
+              <button className="btn btn-primary">Voltar Para Home</button>
+            </Link>
             <button
-              onClick={this.saveClassified}
               disabled={!this.state.description || !this.state.title}
               className="btn btn-success"
             >
               Salvar
             </button>
-          </div>
+          </form>
         )}
       </div>
     );

@@ -1,40 +1,28 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { connect } from 'react-redux';
 import {
   retrieveClassifieds,
   findClassifiedsByTitle,
-} from '../actions/classifieds';
+} from '../../actions/classifieds';
 import { Link } from 'react-router-dom';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import './classifieds-list.component.css';
+import './styles.css';
 
 class ClassifiedsList extends Component {
   constructor(props) {
     super(props);
-    this.onChangeSearchTitle = this.onChangeSearchTitle.bind(this);
     this.refreshData = this.refreshData.bind(this);
-    this.setActiveClassified = this.setActiveClassified.bind(this);
-    this.findByTitle = this.findByTitle.bind(this);
 
     this.state = {
       currentClassified: null,
       currentIndex: -1,
-      searchTitle: '',
     };
   }
 
   componentDidMount() {
     this.props.retrieveClassifieds();
-  }
-
-  onChangeSearchTitle(e) {
-    const searchTitle = e.target.value;
-
-    this.setState({
-      searchTitle: searchTitle,
-    });
   }
 
   refreshData() {
@@ -44,21 +32,7 @@ class ClassifiedsList extends Component {
     });
   }
 
-  setActiveClassified(classified, index) {
-    this.setState({
-      currentClassified: classified,
-      currentIndex: index,
-    });
-  }
-
-  findByTitle() {
-    this.refreshData();
-
-    this.props.findClassifiedsByTitle(this.state.searchTitle);
-  }
-
   render() {
-    const { searchTitle, currentClassified, currentIndex } = this.state;
     const { classifieds } = this.props;
 
     return (
@@ -74,18 +48,29 @@ class ClassifiedsList extends Component {
             classifieds.map((classified, index) => (
               <Card className="card">
                 <CardContent>
-                  <Typography color="textSecondary" gutterBottom>
+                  <Typography
+                    className="title"
+                    color="textSecondary"
+                    gutterBottom
+                  >
                     {classified.title}
                   </Typography>
-                  <Typography color="textSecondary">
+                  <Typography className="date" color="textSecondary">
                     {classified.date}
                   </Typography>
-                  <Typography variant="body2" component="p">
+                  <Typography
+                    className="description"
+                    variant="body2"
+                    component="p"
+                  >
                     {classified.description}
                   </Typography>
                 </CardContent>
               </Card>
             ))}
+        </div>
+        <div className="footer">
+          <p>{classifieds.length} classificados</p>
         </div>
       </div>
     );
