@@ -32,10 +32,8 @@ npm install
 npm start
 ```
 
-Obs.: O frontend por padrão roda no seguinte caminho:
-```sh
+1) Por padrão o frontend roda no seguinte caminho:
 [localhost:8001](https://localhost:8001/)
-```
 
 
 ### Backend
@@ -53,8 +51,6 @@ update-database
 ```
 
 3) Inicie a depuração;
-4) Por padrão o backend roda na seguinte porta:
-```sh
+4) Por padrão o backend roda no seguinte caminho:
 [localhost:44364](https://localhost:44364/)
-```
 ****
