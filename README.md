@@ -42,11 +42,11 @@ localhost:8001
 Requerido [DotNetCore](https://dotnet.microsoft.com/download/dotnet/5.0) v5 to run.
 Backend foi desenvolvido no Visual Studio 2019 Community Edition.
 
-1)Altere a string de conexão com o banco de dados.
-2)Sete fullstack-challenge como projeto de inicialização
+1) Altere a string de conexão com o banco de dados.
+2) Sete fullstack-challenge como projeto de inicialização
 
 
-3)Vá ao console de gerenciamento de pacotes altere para o projeto fullstack-challenge.data 
+3) Vá ao console de gerenciamento de pacotes altere para o projeto fullstack-challenge.data 
 e rode o comando:
 ```sh
 update-database
