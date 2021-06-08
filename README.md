@@ -34,7 +34,7 @@ npm start
 
 Obs.: O frontend por padrão roda no seguinte caminho:
 ```sh
-localhost:8001
+[localhost:8001](https://localhost:8001/)
 ```
 
 
@@ -42,13 +42,19 @@ localhost:8001
 Requerido [DotNetCore](https://dotnet.microsoft.com/download/dotnet/5.0) v5 para rodar.
 Backend foi desenvolvido no Visual Studio 2019 Community Edition.
 
-1) Altere a string de conexão com o banco de dados.
-2) Sete fullstack-challenge como projeto de inicialização
+1) Altere a string de conexão com o banco de dados;
+2) Sete fullstack-challenge como projeto de inicialização;
 
 
 3) Vá ao console de gerenciamento de pacotes altere para o projeto fullstack-challenge.data 
 e rode o comando:
 ```sh
 update-database
+```
+
+3) Inicie a depuração;
+4) Por padrão o backend roda na seguinte porta:
+```sh
+[localhost:44364](https://localhost:44364/)
 ```
 ****
