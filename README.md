@@ -17,13 +17,20 @@ O projeto foi desenvolvido com tecnologia de ponta, sendo elas:
 ## Execução
 
 ### Backend
-Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
+Requerido [Node.js](https://nodejs.org/) v14 to run.
 
 Install the dependencies and devDependencies and start the server.
 
 ```sh
 cd fullstack-challenge-front
-npm i
+
+```
+
+```sh
+npm install
+```
+
+```sh
 npm start
 ```
 
