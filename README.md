@@ -34,16 +34,17 @@ O frontend por padrão roda no seguinte caminho:
 
 
 ### Backend
-Requires [DotNetCore](https://dotnet.microsoft.com/download/dotnet/5.0) v5+ to run.
-Backend foi desenvolvido no Visual Studio 2019 Communit Edition.
+Requerido [DotNetCore](https://dotnet.microsoft.com/download/dotnet/5.0) v5 to run.
+Backend foi desenvolvido no Visual Studio 2019 Community Edition.
 
 
+Altere a string de conexão com o banco de dados.
+Sete fullstack-challenge como projeto de inicialização
+
+
+Vá ao console de gerenciamento de pacotes altere para o projeto fullstack-challenge.data 
+e rode o comando:
 ```sh
-import project visual studio
-```
-
-
-```sh
-127.0.0.1:8001
+update-database
 ```
 ****
